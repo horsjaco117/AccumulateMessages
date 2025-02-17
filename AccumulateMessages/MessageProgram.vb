@@ -1,3 +1,10 @@
+'Jacob Horsley
+'RCET0265
+'Spring 2025
+'URL:https://github.com/horsjaco117/AccumulateMessages
+
+Option Explicit On
+Option Strict On
 
 Imports System
 
@@ -15,6 +22,7 @@ Module MessageProgram
 
 
         'All stored messages are deleted when clearMessage is true
+        'Fulfills a few requisites of test.vb
         If clear Then
             messages.Clear()
         End If
@@ -22,30 +30,12 @@ Module MessageProgram
 
 
         If Not String.IsNullOrEmpty(newMessage) AndAlso Not clear Then
-            messages.Add(newMessage)
+            messages.Add(newMessage) 'When stuff is false it'll add message
 
         End If
 
-
-        ''your code here
-        'Dim message As String() = {"Hello", "Good bye", "Jimmy likes pizza!!", "too many bananas", "more", "aardvark", "must be a number", "I need one more message"}
-        'Return "" 'messages
-        'UserMessages("Hello", False) 'return
-        'UserMessages("Goodbye", False)
-        'Dim result As String
-
-        '' Adding messages sequentially
-        'result = UserMessages("Hello", False)
-        'result = UserMessages("Good bye", False)
-        'result = UserMessages("Jimmy likes pizza!!", False)
-
-        'Console.WriteLine(result) ' Expected output:
-        ' Hello
-        ' Good bye
-        ' Jimmy likes pizza!!
-
         Return String.Join(vbNewLine, messages) & If(messages.Count > 0, vbNewLine, "")
-
+        'The messages are stored, vbnewline is included but crossed out
 
     End Function
 
